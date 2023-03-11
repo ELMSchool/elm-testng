@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Calculator">
+		<classes>
+			<class name="intro.CalcTest">
+				<methods>
+					<include name="addNumbersTest" />
+
+				</methods>
+			</class>
+		</classes>   
+	</test> <!-- Calculator -->
+
+	<test name="Age">
+		<classes>
+			<class name="intro.AgeTest">
+				<methods>
+
+					<include name="testIsYounger" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> <!-- Suite -->

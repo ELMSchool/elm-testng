@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="OrangeHRM Suite">
+	<test name="OrangeHRM Tests 1">
+		<classes>
+			<class name="annotation_attributes_parameters.OrangeHRMTest">
+		</class>
+		</classes>
+	</test>
+</suite>
+
+
+
+
+
+
+
+<!-- <suite name="OrangeHRM Suite"> <test name="OrangeHRM Tests 1"> <classes> 
+	<class name="annotation_attributes_parameters.OrangeHRMTest"> <parameter 
+	name="username" value="Admin" /> <parameter name="password" value="admin123" 
+	/> </class> </classes> </test> <test name="OrangeHRM Tests 2"> <classes> 
+	<class name="annotation_attributes_parameters.OrangeHRMTest"> <parameter 
+	name="username" value="elmtest" /> <parameter name="password" value="Elm1234!" 
+	/> </class> </classes> </test> </suite> -->
