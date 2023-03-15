@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="annotation_attributes_parameters.OrangeHRMTest2">
+      <class name="tests.DashboardTest">
         <methods>
-          <include name="loginTest" invocation-numbers="1 2 3"/>
+          <include name="testWeAreOnDashboard"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- annotation_attributes_parameters.OrangeHRMTest2 -->
+      </class> <!-- tests.DashboardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

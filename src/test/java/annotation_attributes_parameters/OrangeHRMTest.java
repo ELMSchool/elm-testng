@@ -15,6 +15,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utils.Driver;
 
 public class OrangeHRMTest {
 	
@@ -34,8 +35,8 @@ public class OrangeHRMTest {
 	@BeforeClass(groups={"smoke", "regression"})
 	public void setUp() {
 		System.out.println("Setting up Browser...");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		//WebDriverManager.chromedriver().setup();
+		driver = Driver.getDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://opensource-demo.orangehrmlive.com/");
 		driver.manage().window().maximize();

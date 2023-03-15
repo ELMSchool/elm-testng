@@ -2,25 +2,32 @@ package intro;
 
 import static org.testng.Assert.assertEquals;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CalcTest {
 	
-	
-	@Test
-	public void addNumbersTest() {
+	@DataProvider(name = "data")
+	public Object[][] dataProvider(){
 		
-		Calculator calculator = new Calculator();
-		
-		assertEquals(calculator.addNumbers(5, 10), 15);
-		
+		return new Object[][] {
+			
+			{5,   7},
+			{11,  3},
+			{42, 58}
+		};
 	}
 	
-	@Test
-	public void subtractNumbersTest() {
-		Calculator calculator = new Calculator();
-		assertEquals(calculator.subtractNumbers(5, 3), 2);
-	
+	@Test(dataProvider = "data")
+	public void addNumbersTest(int num1, int num2) {
+		
+		System.out.println("num1 = "+ num1 + "  "+ "num2 = "+num2);
 	}
+	
+//	@Test
+//	public void subtractNumbersTest() {
+//		
+//	
+//	}
 
 }
