@@ -6,7 +6,6 @@ import oranghrm_tests.LeavePage;
 
 public class PageFactoryClass {
 	
-	
 	private WebDriver driver;
 	
 	public PageFactoryClass (WebDriver driver) {

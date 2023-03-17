@@ -4,16 +4,11 @@
 <suite name="OrangeHRM Suite">
 	<test name="OrangeHRM Tests 1">
 		<classes>
-			<class name="tests.LoginTest" />
-			<class name="tests.DashboardTest" />
+			<class name="oranghrm_tests.LoginTest" />
+			<class name="oranghrm_tests.DashboardTest" />
 		</classes>
 	</test>
 </suite>
-
-
-
-
-
 
 
 <!-- <suite name="OrangeHRM Suite"> <test name="OrangeHRM Tests 1"> <classes> 

@@ -13,11 +13,11 @@ public class Driver {
 	
 	private Driver() {}
 	
-	private static WebDriver driver;
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	
 	public static WebDriver getDriver() {
 		
-		if (driver == null) {
+		if (driver.get() == null) {
 			
 			String browser = ConfigReader.getPropertyValue("browser");
 			
@@ -25,39 +25,40 @@ public class Driver {
 			
 			case "chrome":
 				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
+				driver.set(new ChromeDriver());
+				driver.get().manage().window().maximize();
 				break;
 				
 			case "chromeHeadless":
 				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+				driver.set(new ChromeDriver(new ChromeOptions().setHeadless(true)));  ;
 				
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
+				driver.set(new FirefoxDriver());
 				break;	
 				
 			case "firefoxHeadless":
 				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver(new FirefoxOptions().setHeadless(true));
+				driver.set(new FirefoxDriver(new FirefoxOptions().setHeadless(true)));
 				break;	
 				
 			case "edge":
 				WebDriverManager.edgedriver().setup();
-				driver = new EdgeDriver();
+				driver.set(new EdgeDriver());
 				break;		
 			}
 			
 		}
 		
-		return driver;
+		return driver.get();
 	}
 
 	public static void closeDriver() {
 		
-		if (driver != null) {
-			driver.quit();
-			driver = null;
+		if (driver.get() != null) {
+			driver.get().quit();
+			driver.set(null);;
 		}
 	}
 }

@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.DashboardTest">
+      <class name="oranghrm_tests.DashboardTest">
         <methods>
+          <include name="setUpMethod"/>
+          <include name="tearDownMethod"/>
+          <include name="setUpSuite"/>
           <include name="testWeAreOnDashboard"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
+          <include name="testLeaveRequestsToApprove"/>
+          <include name="tearDownSuite"/>
         </methods>
-      </class> <!-- tests.DashboardTest -->
+      </class> <!-- oranghrm_tests.DashboardTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
